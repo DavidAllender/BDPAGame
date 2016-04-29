@@ -60,20 +60,3 @@ var hitEnemy = function(hitData){
     score = score + 1;
     Crafty("Score").text(score + " Points");
 };
-
-
-
-
-/**
- * Rouggh instruction steps:
- * 1) Create a basic ship e.g. 2D, DOM, COLOr. Assign x y w h. Assign color
- * 2) add spaceship controls. Notice that rotation is weird
- * 3) set origin
- * 4) bind to keydown and make it so that hitting space bar spawns a new object
- * 5) rig up shooting to use the arrow keys.
-*/
-
-/**
- * TODO:
- * -Fix shooting while flying
- */
