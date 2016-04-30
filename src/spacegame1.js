@@ -3,11 +3,20 @@ window.onload = function () {
     Crafty.background('#000000');
 
     createScore();
+    createInstructions();
     createShootingControls();
     createEnemy();
     createShip();
     createWalls();
 };
+
+var createInstructions = function(){
+	var w = 200;
+	Crafty.e("DOM, 2D, Text")
+        .attr({ x: window.innerWidth - w - 20, y: 20, w: w, h: 80})
+        .textColor("#FFFFFF")
+        .text("You are the green box.<br>The blue box is your enemy.<br>Shoot at it with the arrow keys.<br>Fly your ship with AWDS.");
+}
 
 var createWalls = function(){
     var wallWidth = 500;
