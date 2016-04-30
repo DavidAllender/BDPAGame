@@ -22,6 +22,25 @@ Crafty.c("SpaceShipControls", {
             this.keys.push(e.key);
         }
     },
+    enforceSpeed: function(){
+        var max = 500;
+
+        if(this.vx > max){
+            this.vx = max;
+        }
+
+        if (this.vx < -max){
+            this.vx = -max;
+        }
+
+        if(this.vy > max){
+            this.vy = max;
+        }
+
+        if(this.vy < -max){
+            this.vy = -max;
+        }
+    },
     _enterframe: function (arg) {
         var dt = arg.dt, k = Crafty.keys;
         this.keys.forEach(function (key, i) {
@@ -34,6 +53,7 @@ Crafty.c("SpaceShipControls", {
                     case k.Q: this.vrotation -= this.rspeed * dt; break;
                     case k.E: this.vrotation += this.rspeed * dt; break;
                 }
+                this.enforceSpeed();
             } else {
                 this.keys.splice(i, 1);
             }
